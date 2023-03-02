@@ -1,4 +1,4 @@
-package mail.escuelaing.edu.eci.user.repository;
+package mail.escuelaing.edu.eci.user.model;
 
 public class UserDto {
     private final String name;

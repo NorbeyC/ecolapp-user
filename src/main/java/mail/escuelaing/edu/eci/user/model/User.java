@@ -1,4 +1,4 @@
-package mail.escuelaing.edu.eci.user.repository;
+package mail.escuelaing.edu.eci.user.model;
 
 import jakarta.persistence.*;
 

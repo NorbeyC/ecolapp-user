@@ -1,8 +1,8 @@
 package mail.escuelaing.edu.eci.user.controller;
 
 import mail.escuelaing.edu.eci.user.exception.UserNotFoundException;
-import mail.escuelaing.edu.eci.user.repository.User;
-import mail.escuelaing.edu.eci.user.repository.UserDto;
+import mail.escuelaing.edu.eci.user.model.User;
+import mail.escuelaing.edu.eci.user.model.UserDto;
 import mail.escuelaing.edu.eci.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,11 +31,10 @@ public class UserController {
 
     @PutMapping("{id}")
     public ResponseEntity<?> updateUser(@RequestBody UserDto userDto, @PathVariable(value = "id") String id){
-        User user = new User(userDto);
+        //User user = new User(userDto);
         Optional<User> users = userService.findById(id);
         if(users.isPresent()){
-            userService.update(user);
-            userService.save(user);
+            userService.update(userDto, id);
             return new ResponseEntity<>(HttpStatus.OK);
         }else{
             throw  new UserNotFoundException(id);
