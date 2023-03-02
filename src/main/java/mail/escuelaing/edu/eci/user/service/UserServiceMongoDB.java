@@ -21,9 +21,9 @@ public class UserServiceMongoDB implements UserService{
 
     public User update(UserDto userDto, String id) {
         {
-            if ( userRepository.findById(Long.valueOf(id)).isPresent() )
+            if ( userRepository.findById(id).isPresent() )
             {
-                User user = userRepository.findById(Long.valueOf(id)).get();
+                User user = userRepository.findById(id).get();
                 user.update( userDto );
                 userRepository.save( user );
                 return user;
