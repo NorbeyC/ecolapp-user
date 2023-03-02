@@ -1,8 +1,8 @@
 package mail.escuelaing.edu.eci.user.controller;
 
 import mail.escuelaing.edu.eci.user.exception.UserNotFoundException;
-import mail.escuelaing.edu.eci.user.model.User;
-import mail.escuelaing.edu.eci.user.model.UserDto;
+import mail.escuelaing.edu.eci.user.repository.document.User;
+import mail.escuelaing.edu.eci.user.repository.document.UserDto;
 import mail.escuelaing.edu.eci.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
